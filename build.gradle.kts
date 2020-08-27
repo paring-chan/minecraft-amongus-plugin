@@ -30,7 +30,7 @@ tasks {
     }
 
     shadowJar {
-        archiveClassifier.set("lib")
+        archiveClassifier.set("dist")
     }
 
     create<Copy>("distJar") {

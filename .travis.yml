@@ -1,11 +1,19 @@
 language: java
 jdk:
-  - openjdk8
+- openjdk8
 branches:
   only:
-    - master
+  - master
 cache:
   directories:
-    - '$HOME/.gradle'
-script:
-  './gradlew clean shadowJar'
+  - "$HOME/.gradle"
+script: "./gradlew clean shadowJar"
+deploy:
+  provider: releases
+  api_key:
+    secure: a6IOO3u8nL0ZTZ7Dki6v8BNq8EUP9WoRDjWtsWjkfZv2XH+tJ3RnXlKRahtMOPzWx/hE21Haeg3gzufQotq8x4+NXhByhvIWdJBqG4qFNgJW7U8+fMuZGT97IgpAi2HMDlxqLXlC5yksY5puUeEKAKx4WW9DBnQgaOBydbYziYpw74UIp5XDTiLTXf8UciykmLCJoHI/jaE6yg99mvL61+AVd1MjiKAEj1OAR0mFZkwkFIdgs/EpG5hwRHBNXllAqNilEQYyqHuAGvywkskychsLsIiEU/Yt8329i414GcGrq80sdKjENkiMAOKo3fezjrofPlifEHpoQM44KOIajYU/4WdpGLQHL8AwGBcNLIS+xFyz/6gMEuWbXgyJQ+zmOj2mtR0Ao40bgC41th0pE1P/ESBO+tdFLx+ltC/Lsz8nR3qgGk4WGcMOEeiJjO2ThZhJkZTmgiEl3JHgabupunBWnux0mrAZhZdijHXfcIq1RPaQ/U7sV4e2t8js+nX4SlHRDPiGopdqsBN61i0wzOMhPHaVAXSBM3QYVFdavfZg6l8QWJE723vRmgfPAvL2iMEPXWBm0hNC/19TY52YoR0XyV8Zt0ruSFq2oWoKhZq9TBvUDMw/lsfjDZl6HQL0JOv2Vyz4SXa86IoxoTjM0vjfq8N3zeIj3qvkGoDIHlE=
+  file:
+    - build/libs/minecraft-amongus-1.0-SNAPSHOT-dist.jar
+  on:
+    repo: parangee/minecraft-amongus-plugin
+  skip_cleanup: 'true'
