@@ -1,3 +1,4 @@
 name: AmongUS
 version: 0.0.1
 main: com.github.parangee.amongus.plugin.AmongUS
+api-version: '1.16'
